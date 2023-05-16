@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Pokédex</h1>
+    <hr>
+    <div class="row">
+        {% for pokemon in pokemonList %}
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; 
+                list-style: none;
+                padding: 40px;
+                color: #222;
+                text-align: center;
+                border-radius: 20px;
+                position: relative;
+                transition: all ease-in .1s;">
+                    <div class="card-body">
+                        <img class = "card-image" alt = "{{pokemon.name}}" src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png" style="height: 180px;"/>
+                        <p class = "card-number" style="background-color: #fff;
+                        opacity: .9;
+                        border-radius: 5px;
+                        color: rgb(105, 105, 107);
+                        position: relative;
+                        margin-top: 15px	;
+                        margin-bottom: 5px;
+                        font-weight: lighter;
+                        z-index: 2;
+                        cursor:default;">#{{pokemon.id}}</p>
+                        <h5 class="card-title" style="background-color: #fff;
+                        opacity: .9;
+                        color: rgb(74, 74, 75);
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        padding-bottom: 3px;
+                        padding-top: 3px;
+                        border-radius: 7px;
+                        text-transform: capitalize;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                        font-size: 20px;
+                        font-weight: normal;
+                        position: relative;
+                        z-index: 2;
+                        cursor:default;">{{pokemon.name}}</h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
